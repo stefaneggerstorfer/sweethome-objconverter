@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'com.steg.sweethome.objconverter.Main'
+version = '0.0.1'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+	compile 'com.massisframework:sweethome3d:5.4.0.4'
+}
+
+jar {
+    manifest {
+        attributes('Main-Class': mainClassName)
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.5'
+}
